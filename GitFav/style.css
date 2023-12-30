@@ -1,0 +1,279 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --black: #000;
+  --button-light-blue: #065E7C;
+  --dark-blue: #06181C;
+  --odd-blue: rgba(6, 22, 27, 0.50);
+
+  --text-white: #E1E1E6;
+  --text-red: #F75A68;
+  --text-gray: #7C7C8A;
+  --text-red-hover: #af0412;
+  --text-gray-dark: #4E5455;;
+
+  --border-table: #4A808C;
+  --top--table: #092D38;
+
+  --white: #FFF;
+}
+
+body {
+  margin: 0;
+  background-color: var(--black);
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 11.6rem;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+header {
+  display: flex;
+  margin-top: 11.5rem;
+  gap: 29.3719rem;
+  align-items: flex-end;
+  margin-bottom: 8.7rem;
+}
+
+section {
+  display: flex;
+  gap: .8rem;
+}
+
+.search input {
+  display: flex;
+  padding: 1.6rem;
+  align-items: center;
+  gap: 1rem;
+  align-self: stretch;
+  border-radius: .5rem;
+  background: var(--dark-blue);
+  border-style: none;
+
+  width: 46.2rem;
+  height: 4.8rem;
+
+  color: var(--text-gray);
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+header button {
+
+
+  display: flex;
+  padding: .12rem 3.2rem;
+  justify-content: center;
+  align-items: center;
+  gap: .8rem;
+
+  border-radius: 5px;
+  background: var(--button-light-blue);
+  
+  color: var(--white);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 2.4rem; /* 171.429% */
+  text-transform: uppercase;
+
+  border-style: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+button:hover,
+.search input:hover {
+  filter: brightness(1.2);
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+
+#tabela {
+  border-radius: 1.2rem;
+  border: .1rem solid var(--border-table);
+}
+
+table {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  
+  
+  color: var(--text-white);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 160%; /* 32px */
+}
+
+table * {
+  font-size: 1.4rem;
+  color: var(--text-white);
+}
+
+thead {
+  background-color: var(--top--table);
+  border-top-right-radius: 1.2rem;
+  border-top-left-radius: 1.2rem;
+}
+
+#usuario {
+  width: 50.4rem;
+  padding: 1.2rem 4rem;
+}
+
+#repositorio,
+#seguidores {
+  width: 21.9rem
+}
+
+#acao {
+  width: 17.8rem;
+}
+
+tbody {
+  display: flex;
+  flex-direction: column;
+}
+
+tbody tr {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+table thead th {
+  text-align: left;
+  padding: 1.4rem;
+}
+
+table tbody tr:last-child {
+  border-bottom-left-radius: 1.2rem;
+  border-bottom-right-radius: 1.2rem;
+}
+
+
+
+table tbody tr:nth-child(odd) {
+  background: var(--odd-blue);
+}
+
+table tbody tr:nth-child(even) {
+  background: var(--dark-blue);
+}
+
+table tbody td {
+  height: 10.4rem;
+}
+
+td.user {
+  display: flex;
+  align-items: center;
+  padding: 2.4rem 2.4rem 2.4rem 4rem;
+  width: 50.4rem;
+}
+
+
+td.user img {
+  width: 5rem;
+  height: 5rem;
+
+  margin-right: 1.6rem;
+  
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+td.user a {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+td.user span {
+  font-weight: 400;
+}
+
+.repositories, .followers {
+  display: flex;
+  padding: 2.4rem 2.4rem 2.4rem 4.0rem;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 21.9rem;
+  justify-content: center;
+}
+
+td .remove {
+  display: flex;
+  width: 17.8rem;
+  height: 10.4rem;
+  padding: 2.4rem 2.4rem 2.4rem 4.0rem;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  background: none;
+  border: none;
+  
+  color: var(--text-red);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 160%; /* 32px */
+}
+
+td .remove:hover {
+  color: var(--text-red-hover);
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+.no-favs {
+  display: flex;
+  width: 100%;
+  background-color: var(--dark-blue);
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+  height: 40rem;
+  border-radius: 0 0 1.2rem 1.2rem;
+}
+
+.no-favs h2 {
+  color: var(--text-gray-dark);
+  font-family: 'Roboto Mono', monospace;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 24.781px; /* 61.953% */
+}
+
+.no-favs img {
+  width: 13.2rem;
+  height: 12.5rem;
+}
